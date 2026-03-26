@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> THIS WILL HELP YOU AT SCHOOL </title>
+        <style>
+            body{
+    background-color: teal;
+}
+button{
+    color: white;
+    background-color: purple;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+}
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1> Multiplication Table Generator </h1>
+        <input type="number" placeholder="Enter A Number" id="num1">
+        <button onclick="tableGenerator()"> Generate Button </button>
+        <div id="result"> </div>
+        <center>
+        <script>
+            function tableGenerator(){
+                let num = document.getElementById("num1").value;
+                let answer = document.getElementById("result");
+                if(num === ""){
+                    answer.innerHTML = "Pls Enter A Value";
+                    return;
+                }
+                let table = `<h2> Multiplication Table For ${num} <h2>`;
+                for(let i = 1; i <= 10; i++){
+                    table += `${num} * ${i} = ${num * i} <br>`;
+                }
+                answer.innerHTML = table;
+            }
+        </script>
+    </body>
+</html>
